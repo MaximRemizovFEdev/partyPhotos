@@ -1,0 +1,97 @@
+:root {
+  color-scheme: light;
+  --ink: #302b27;
+  --muted: #776d64;
+  --accent: #a74632;
+  --paper: #faf6ee;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, sans-serif; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  padding: 14px 22px;
+  cursor: pointer;
+  min-height: 48px;
+}
+button:hover:enabled { background: #893824; }
+button:disabled { opacity: .45; cursor: default; }
+button.secondary { background: transparent; color: var(--accent); }
+button.secondary:hover:enabled { background: #f4e8dd; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #ab7345;
+  outline-offset: 4px;
+}
+.shell {
+  margin: auto;
+  padding: max(48px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
+    max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+}
+.narrow { max-width: 680px; }
+.wide { max-width: 1200px; }
+header { text-align: center; margin-bottom: 32px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 11px; color: var(--muted); }
+h1, h2 { font-family: Georgia, serif; font-weight: 400; text-wrap: balance; }
+h1 { font-size: clamp(42px, 9vw, 70px); line-height: 1.05; margin: 20px 0; overflow-wrap: anywhere; }
+h2 { font-size: 27px; line-height: 1.3; margin: 0 0 16px; }
+.title-dot { color: var(--accent); }
+p { line-height: 1.6; }
+.intro { color: var(--muted); font-size: 14px; }
+.timer { text-align: center; padding: 22px 0 30px; border-top: 1px solid #d9cdbf; }
+.timer span, .timer small { display: block; color: var(--muted); font-size: 12px; }
+.timer strong { display: block; font-size: 42px; font-weight: 400; font-variant-numeric: tabular-nums; margin: 8px 0; }
+.panel { background: #fffdf9; padding: 28px; border: 1px solid #e1d8cc; border-radius: 16px; }
+.assignment p, small { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.assignment h2 { font-size: 25px; }
+.camera { margin: 24px 0; }
+.viewfinder { position: relative; background: #302c29; aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; }
+.viewfinder video, .viewfinder img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.frame-label {
+  position: absolute; bottom: 12px; left: 12px; color: white; background: #302b27b8;
+  padding: 6px 10px; border-radius: 5px; font-size: 11px;
+}
+.camera-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.camera-actions button { flex: 1; font-size: 14px; }
+label { display: block; font-size: 14px; margin: 20px 0 8px; }
+label span { float: right; color: var(--muted); font-size: 12px; }
+input, textarea {
+  display: block; width: 100%; border: 1px solid #cfc2b3; border-radius: 8px;
+  background: #fff; padding: 13px; font-size: 16px; color: var(--ink);
+}
+textarea { resize: vertical; min-height: 110px; }
+.privacy { font-size: 12px; color: var(--muted); margin: 20px 0; }
+form > button { width: 100%; margin-top: 10px; }
+.waiting { text-align: center; padding: 45px 28px; }
+.spark { display: block; font-size: 48px; color: var(--accent); margin-bottom: 20px; }
+[role="alert"] { color: #9b3023; font-size: 14px; }
+.notice { margin-bottom: 20px; }
+.gallery h2 { margin-bottom: 28px; }
+.react-photo-album--button { color: var(--ink); background: transparent; border: 0; padding: 0; }
+.react-photo-album--button:hover:enabled { background: #f0e7da; }
+.yarl__slide_description { white-space: pre-wrap; overflow-wrap: anywhere; }
+.yarl__slide_captions_container { max-height: 40vh; max-height: 40dvh; overflow-y: auto; }
+.admin-time { font-size: 36px; font-variant-numeric: tabular-nums; }
+footer { text-align: center; color: var(--muted); font-size: 11px; padding: 36px 0 12px; letter-spacing: .04em; }
+@media (max-width: 600px) {
+  .shell {
+    padding: max(24px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right))
+      max(14px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+  }
+  .panel { padding: 20px; }
+  .assignment h2 { font-size: 23px; }
+  .assignment p, small, .privacy { font-size: 14px; }
+  .eyebrow, footer { font-size: 12px; }
+  .intro, label { font-size: 16px; }
+  label span, .timer span, .timer small { font-size: 14px; }
+  .camera-actions { flex-direction: column; }
+  .camera-actions button { width: 100%; font-size: 16px; }
+  .frame-label { right: 12px; width: fit-content; max-width: calc(100% - 24px); font-size: 12px; }
+  .timer strong { font-size: clamp(32px, 10vw, 42px); overflow-wrap: anywhere; }
+  .yarl__slide_title { font-size: 18px; overflow-wrap: anywhere; }
+  .yarl__slide_description { font-size: 16px; }
+}
